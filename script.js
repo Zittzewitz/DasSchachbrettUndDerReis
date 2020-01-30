@@ -14,31 +14,37 @@ function reiskornRechner(){
             table.innerHTML += '<tr>' + '<td>' + i + '.' +'Schachfeld: ' + '</td><td>' +(z) + ' Reiskörner ' + '</td><td>' + 'Gewicht: ' + round + 'kg' + '</td><td></td></tr>';
         }else{
             gewichtGt = gewichtG / 1000000;
+            
             round = Math.round(gewichtGt);
             table.innerHTML += '<tr id="row-t">' + '<td>' + i + '.' +'Schachfeld: ' + '</td><td>' +(z) + ' Reiskörner ' + '</td><td>' + 'Gewicht: ' + round + 't' + '</td><td id="feld-t"></td></tr>';
             //bigAs();
-
+            console.log(gewichtGt);
+            heavyAs();
+            
         }
-        
-        
         
     }
 }
 
 
 reiskornRechner();
+console.log(gewichtGt);
 
-function bigAs () {
-    switch(gewichtGt){
-            case 0:
-                if(gewichtGt > 2 || gewichtGt < 6){
-                let row = document.getElementById("feld-t");
-                //let elRow = row.createElement("td");
-                row.innerHTML = "Elefant";
-                break;
-            }
-                default: 
-                row.innerHTML = "Keiner";
 
+function heavyAs() {
+    if (gewichtGt > 2.0 || gewichtGt <= 6.0) {
+        document.getElementById("feld-t").innerHTML = "ElefantenEsel";
+    }
+    else {
+        document.getElementById("feld-t").innerHTML = "Nutter";
     }
 }
+// function bigAs () {
+//     switch(gewichtGt){
+//         case (gewichtGt > 3 || gewichtGt <= 6):
+//             document.getElementById("feld-t").innerHTML = "Elefant";
+//             break;
+//         default:
+//             document.getElementById("feld-t").innerHTML = "Nix";
+//     }
+// }
